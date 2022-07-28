@@ -27,6 +27,7 @@ Creating an Application with python - Linux
 	9. Save file with ‘:wq’ 
         1. Test the App
             1. python3 create.py
+	    2. vi data.db - Success if its not empty
 
 Final app.py
 
