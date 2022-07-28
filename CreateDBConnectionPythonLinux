@@ -27,3 +27,35 @@ Creating an Application with python - Linux
 	9. Save file with ‘:wq’ 
         1. Test the App
             1. python3 create.py
+
+Final app.py
+
+from flask import Flask
+from flask_sqlalchemy import SQLAlchemy
+import os
+
+app = Flask(__name__)
+
+app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///data.db"
+
+db = SQLAlchemy(app)
+
+class Users(db.Model):
+    id = db.Column(db.Integer, primary_key=True)
+    first_name = db.Column(db.String(30), nullable=False)
+    last_name = db.Column(db.String(30), nullable=False)
+if __name__ == '__main__':
+    app.run(debug=True, host='0.0.0.0', port=5000)
+    
+    
+    
+Final create.py:
+
+from app import db, Users
+
+db.drop_all()
+db.create_all()
+
+testuser = Users(first_name="Deepanshu",last_name="Pasrija")
+db.session.add(testuser)
+db.session.commit()
