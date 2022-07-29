@@ -65,7 +65,7 @@ FINAL TEMPLATES/HOME.HTML:
                     </div>
                     {% endif %}
                     <br>
-                    {{ from.submit }}
+                    {{ form.submit }}
              </form>
     </div>
     <div>
