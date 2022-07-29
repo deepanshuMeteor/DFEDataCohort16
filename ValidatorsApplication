@@ -7,7 +7,7 @@ from wtforms.validators import DataRequired, Length, ValidationError
 
 app = Flask(__name__)
 
-app.config["SQLALCHEMY_DATABASE_URI"]="sqlite:///data.db"
+app.config["SECRET_KEY"]="SOME_KEY"
 
 class UserCheck:
     def __init__(self,banned, message=None):
