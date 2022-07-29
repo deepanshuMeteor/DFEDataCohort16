@@ -39,3 +39,37 @@ def postName():
 
 if __name__ == '__main__':
     app.run(debug=True, host='0.0.0.0', port=5000)
+    
+    
+    
+    
+    
+FINAL TEMPLATES/HOME.HTML:
+
+<html>
+  <head>
+    <title>Add person</title>
+  </head>
+  <body>
+    <h1>Choose a Username</h1>
+    <div class="form">
+            <form method="POST" action="/">
+                    {{ form.hidden_tag() }}
+                    {{ form.username.label }}
+                    {{ form.username }}
+                    {% if form.username.errors %}
+                    <div class="error">
+                            {% for error in form.username.errors %}
+                                <span>{{ error }}</span>
+                        {% endfor %}
+                    </div>
+                    {% endif %}
+                    <br>
+                    {{ from.submit }}
+             </form>
+    </div>
+    <div>
+            <p> You chose: {{ username }} </p>
+    </div>
+  </body>
+</html>
