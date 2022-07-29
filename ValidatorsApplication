@@ -23,7 +23,7 @@ class UserCheck:
 class myForm(FlaskForm):
     username = StringField("Username", validators=[
         DataRequired(),
-        UserCheck(message="Given username is not allowed", banned=["root","admin","sys"])
+        UserCheck(message="Given username is not allowed", banned=["root","admin","sys"]),
         Length(min=2,max=15)
         ])
     submit = SubmitField("Sign up")
@@ -95,4 +95,4 @@ Creating an Application with python - Linux
     9. vi templates/home.html
     10. Save file with ‘:wq’ 
     11. Test the App
-            1. python3 aap.py
+            1. python3 app.py
