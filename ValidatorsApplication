@@ -44,7 +44,7 @@ if __name__ == '__main__':
     
     
     
-FINAL TEMPLATES/HOME.HTML:
+FINAL templates/home.html:
 
 <html>
   <head>
